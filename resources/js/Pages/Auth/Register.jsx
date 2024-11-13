@@ -7,8 +7,8 @@ export default function Register() {
         RegisterController();
 
     return (
-        <form onSubmit={submit} className="max-h-screen max-w-2xl py-5 mx-auto">
-            <div className="flex-center min-h-screen">
+        <form onSubmit={submit} className="account-container">
+            <div className="flex-center max-w-2xl py-5 mx-auto">
                 <div className="w-full px-5 lg:px-10 xl:px-32 mx-auto">
                     <div className="flex-col-10">
                         <h1 className="font-bold text-5xl text-center">

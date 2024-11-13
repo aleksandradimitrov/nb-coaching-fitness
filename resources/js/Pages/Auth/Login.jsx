@@ -10,10 +10,9 @@ export default function Login() {
     return (
         <form
             onSubmit={submit}
-            className="overflow-y-hidden max-h-screen max-w-2xl mx-auto"
+            className="account-container"
         >
-            <div className="bg-panel-image bg-center bg-cover" />
-            <div className="flex-center min-h-screen">
+            <div className="max-w-2xl mx-auto flex-center min-h-screen">
                 <div className="w-full px-5 lg:px-10 xl:px-32 mx-auto">
                     <div className="flex-col-10">
                         <h1 className="font-bold text-5xl text-center">Вход</h1>

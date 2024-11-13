@@ -21,20 +21,20 @@ const Programs = ({ tables, user }) => {
                     )}
                 </div>
             ) : (
-                <div className="relative h-[300px] p-5 rounded-lg border border-red-600 pointer-events-none select-none">
-                    <div className="absolute flex flex-col lg:flex-row items-center  gap-5 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[1000]">
+                <div className="relative h-[300px] p-5 rounded-lg border border-red-600">
+                    <div className="absolute flex flex-col lg:flex-row items-center  gap-5 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <a href="/quiz" className="text-white">
                             <button className="fill-red-button">
                                 Take the quiz
                             </button>
                         </a>
-                        <a className="text-black" href="#learnMore">
+                        <a className="text-black" href="/contact">
                             <button className="border-red-600 bg-neutral-300 p-2 px-4 rounded-lg text-black">
                                 Свържете се с мен
                             </button>
                         </a>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 blur-lg">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 blur-lg pointer-events-none select-none">
                         {Array.from({ length: 1 }).map((_, index) => (
                             <a
                                 key={index}

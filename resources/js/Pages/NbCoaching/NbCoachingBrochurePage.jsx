@@ -20,7 +20,7 @@ const NbCoachingBrochurePage = ({ id: paramsId }) => {
     } = BrochureController(paramsId);
 
     return (
-        <div>
+        <div className="bg-header-image min-h-screen">
             <div className="py-5 max-w-wrapper flex-col-3 items-center justify-center overflow-hidden">
                 <div className="text-stone-400 flex-center gap-10 w-full">
                     <ChevronLeft className="cursor-pointer" size={30} onClick={handlePreviousPage} />

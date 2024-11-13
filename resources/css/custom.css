@@ -60,11 +60,12 @@
 .input-container textarea {
     width: 100%;
     background: transparent;
-    border: 1px solid var(--mainDarkLightTextColor);
+    border: 1px solid #8e7f80;
     border-radius: 0.5em;
-    color: var(--mainDarkLightTextColor);
+    color: #fff;
     outline: none;
     transition: border 0.3s ease;
+    background-color: #242323;
     user-select: none;
     box-shadow: none;
 }
@@ -114,6 +115,40 @@ iframe:hover {
 .swiper-pagination .swiper-pagination-bullet-active {
     background-color: #ff0000;
     transform: scale(1.5);
+}
+
+
+.hidden-radio-input {
+    display: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none;    
+    appearance: none;     
+}
+
+.custom-radio-box-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.custom-radio-box {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #8e7f80;
+    border-radius: 0.5em;
+    color: #fff;
+    outline: none;
+    transition: border 0.3s ease;
+    padding: 10px;
+    background-color: #242323;
+}
+
+
+.hidden-radio-input:checked + .custom-radio-box {
+    background-color: #7A6D6D;
+    border-color: #BEB0B0;
+    color: white;
 }
 
 

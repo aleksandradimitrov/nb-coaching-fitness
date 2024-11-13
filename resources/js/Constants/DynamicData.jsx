@@ -119,18 +119,28 @@ export const LoginInputs = (data, errors) => [
 export const contactFormInputs = (data) => [
     {
         name: "Email",
-        value: data.email,
-        placeholder: "Имейл"
+        value: data.firstName,
+        placeholder: "Име"
+    },
+    {
+        name: "Email",
+        value: data.secondName,
+        placeholder: "Фамилия"
     },
     {
         name: "Phone Number",
         value: data.phone,
-        placeholder: "Телефонен номер"
+        placeholder: "Телефон"
+    },
+    {
+        name: "Email",
+        value: data.email,
+        placeholder: "Имейл"
     },
     {
         name: "Message",
         value: data.additional_info,
-        placeholder: "Опишете вашите фитнес цели, опит и очаквания, за да ви помогна по най-добрия начин."
+        placeholder: "Опишете вашите фитнес цели."
     },
 ];
 

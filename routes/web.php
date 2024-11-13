@@ -63,6 +63,20 @@ Route::get('/nb-coaching', function () {
     );
 })->name('nb-coaching');
 
+
+
+//-----------------alex topki added------------------//
+
+Route::get('/about', function () {
+    return Inertia::render('AboutPage');
+});
+
+Route::get('/quiz', function () {
+    return Inertia::render('QuizPage');
+});
+//---------------alex topki added------------------//
+
+
 Route::get('/nb-coaching/brochure/{id}', function ($id) {
     return Inertia::render('NbCoaching/NbCoachingBrochurePage', [
         'id' => $id

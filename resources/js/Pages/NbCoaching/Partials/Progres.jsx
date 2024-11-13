@@ -233,7 +233,7 @@ const Progres = ({ auth, setIsModalTwoOpen, images, isModalTwoOpen, user }) => {
                                 Take the quiz
                             </button>
                         </a>
-                        <a className="text-black" href="#learnMore">
+                        <a className="text-black" href="/contact">
                             <button className="border-red-600 bg-neutral-300 p-2 px-4 rounded-lg text-black">
                                 Свържете се с мен
                             </button>

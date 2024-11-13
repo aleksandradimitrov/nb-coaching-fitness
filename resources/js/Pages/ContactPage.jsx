@@ -1,12 +1,9 @@
-import {
-    contactFormGridThree,
-} from "@/Constants/StaticData";
-import {
-    contactFormInputs
-} from "@/Constants/DynamicData";
+import { contactFormGridThree } from "@/Constants/StaticData";
+import { contactFormInputs } from "@/Constants/DynamicData";
 import Navbar from "@/CustomComponents/Navbar";
-import { Send } from "lucide-react";
+import { Instagram, Mail, MessageCircle, Phone, Send } from "lucide-react";
 import React, { useState } from "react";
+import { ChatBubbleIcon } from "@radix-ui/react-icons";
 
 const ContactPage = () => {
     const [data, setData] = useState({
@@ -32,45 +29,52 @@ const ContactPage = () => {
     };
 
     return (
-        <div className="relative overflow-hidden">
-            <Navbar/>
-            <img src="/assets/white-dots.png" className="absolute opacity-5 -right-[20%]"/>
-            <div className="bg-[#191919] top-1/2 w-[1000px] h-[600px] absolute z-[-1]"/>
-            <div className="flex-col-3 max-w-wrapper min-h-screen flex-center w-full ">
-                <div className="flex-col-5 w-full py-5 mt-20 lg:mt-0">
-                    <div className="w-full lg:text-center">
-                        <h1 className="font-bold text-4xl">Свържете се с мен</h1>
-                    </div>
-
-                    <div className="grid-3 gap-10 items-center">
-                        <form
-                            onSubmit={onSubmit}
-                            className="flex-col-5 col-span-2"
-                        >
-                            <div className="grid-2 gap-5">
-                                <div className="input-container">
-                                    <input
-                                        id={data.firstName}
-                                        name="First Name"
-                                        autoComplete="name"
-                                        onChange={handleChange}
-                                        required
-                                        placeholder="Име"
+        <div>
+            <div className="relative account-container overflow-hidden">
+                <Navbar />
+                <div className="flex-col-3 max-w-wrapper w-full py-32">
+                    <div className="grid-2 gap-10 items-center">
+                        <div className="flex-col-20 max-w-sm">
+                            <div className="flex-col-5">
+                                <h1 className="text-5xl font-bold">
+                                    Контакт с <br />
+                                    <span className="font-bold text-red-600">
+                                        NB
+                                    </span>
+                                    coaching<span></span>
+                                </h1>
+                                <p>
+                                    Ако търсите индивидуален подход, насоки и
+                                    фитнес стратегии, които да ви помогнат да
+                                    постигнете целите си, ще се радвам да се
+                                    свържете с мен!
+                                </p>
+                                <p>
+                                    Попълните контактната форма или пишете на
+                                    WhatsApp.
+                                </p>
+                            </div>
+                            <div className="flex-col-3">
+                                <p>Контакт чрез WhatsApp</p>
+                                <div className="flex-2">
+                                    <MessageCircle
+                                        className="text-white"
+                                        size={25}
                                     />
-                                </div>
-                                <div className="input-container">
-                                    <input
-                                        id={data.secondName}
-                                        name="First Name"
-                                        autoComplete="name"
-                                        onChange={handleChange}
-                                        required
-                                        placeholder="Фамилия"
-                                    />
+                                    <p className="text-white">+359 878920042</p>
                                 </div>
                             </div>
+                        </div>
+                        <form onSubmit={onSubmit} className="flex-col-3">
                             {contactFormInput.map((data, index) => (
-                                <div className="input-container" key={index}>
+                                <div
+                                    className="input-container flex-col-1"
+                                    key={index}
+                                >
+                                    <label className="text-white">
+                                        {data.placeholder}
+                                        <span className="text-red-600">*</span>
+                                    </label>
                                     <input
                                         id={data.value}
                                         name="name"
@@ -81,33 +85,40 @@ const ContactPage = () => {
                                     />
                                 </div>
                             ))}
-                            <button className="flex-3 bg-white p-3 text-center flex items-center justify-center rounded-md w-full">
-                                <span className="hidden sm:flex">Изпрати съобщение</span>
-                                <Send />
+                            <button className="fill-red-button w-max p-3">
+                                Изпращане
                             </button>
-                        </form>
-                        <div className="flex-col-5">
-                            {contactFormGridThree.map((data, id) => (
-                                <div className="flex-col-3" key={id}>
-                                    <h1 className="font-bold text-2xl">
-                                        {data.heading}
-                                    </h1>
-                                    <p>{data.p}</p>
-                                    {data.add.map((item, id) => (
-                                        <div className="flex-3" key={id}>
-                                            <i className="text-white">
-                                                {item.icon}
-                                            </i>
-                                            <span className="text-white underline">
-                                                {item.text}
-                                            </span>
-                                        </div>
-                                    ))}
+
+                            <div className="flex-col-3 mt-10">
+                                <div className="flex-3">
+                                    <Phone className="text-white" />
+                                    <p className="text-white">+359 878920042</p>
                                 </div>
-                            ))}
-                        </div>
+                                <div className="flex-3">
+                                    <Mail className="text-white" />
+                                    <p className="text-white">
+                                        nbcoachingfitness@gmail.com
+                                    </p>
+                                </div>
+
+                                <div className="flex items-center gap-3">
+                                    <div className="p-2 bg-neutral-800 rounded-full">
+                                        <MessageCircle className="text-white" />
+                                    </div>
+                                    <div className="p-2 bg-neutral-800 rounded-full">
+                                        <Instagram className="text-white" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
+            </div>
+            <div className=" w-full flex flex-col lg:flex-row justify-center lg:items-center gap-3 p-5">
+                <p>Настройки за бисквитките</p>
+                <p>Условия и правила за ползване</p>
+                <p>Защити и сигурност</p>
+                <p>Всички права запазени ©{new Date().getFullYear()}</p>
             </div>
         </div>
     );
