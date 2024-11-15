@@ -58,7 +58,7 @@ const Navbar = () => {
                             <a
                                 className={`${
                                     window.location.pathname === link.path
-                                        ? "text-white"
+                                        ? "text-white text-underline    "
                                         : ""
                                 } hover:text-white transition-all cursor-pointer font-bold`}
                                 href={link.path}

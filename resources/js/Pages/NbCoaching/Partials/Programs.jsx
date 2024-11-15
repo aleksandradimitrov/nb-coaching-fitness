@@ -15,7 +15,7 @@ const Programs = ({ tables, user }) => {
                             <ProgrammCard {...table} key={id} />
                         ))
                     ) : (
-                        <div className="flex justify-center items-center w-full h-[200px] border border-neutral-800 rounded-md p-5 text-white col-span-1 sm:col-span-2 lg:col-span-4">
+                        <div className="flex justify-center items-center w-full h-[200px] rounded-md p-5 text-white col-span-1 sm:col-span-2 lg:col-span-4">
                             Моля изчакайте добавяне на програми.
                         </div>
                     )}

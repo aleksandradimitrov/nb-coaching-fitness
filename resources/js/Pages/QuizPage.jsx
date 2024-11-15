@@ -82,16 +82,18 @@ const Quiz = () => {
     const userAnswer = userResponses[currentQuestion.question] || "";
 
     return (
-        <div>
+        <div className="">
             <ProgressBar progress={progress} />
-
-            <div className="flex-center bg-header-image max-h-screen overflow-hidden">
-                <div className="flex flex-col justify-between max-w-[400px] w-full gap-5 min-h-screen py-56">
+            <div className="h-[70px] lg:hidden"/>
+            <div className="flex-center bg-header-image max-h-screen overflow-hidden px-5">
+                <div className="flex flex-col justify-between max-w-[400px] w-full gap-5 min-h-screen  py-56">
                     <div className="flex flex-col gap-5 lg:gap-3">
-                        <h3 className="text-3xl font-bold">
+                        <h3 className="text-2xl font-bold">
                             {currentQuestionIndex + 1}.{" "}
                             {currentQuestion.question}
                         </h3>
+
+                        <p>{currentQuestion.textone}</p>
 
                         {/* Render the question input based on type */}
                         {currentQuestion.type === "single-choice" && (
@@ -191,6 +193,7 @@ const Quiz = () => {
                                     placeholder={currentQuestion.placeholder}
                                     value={userAnswer}
                                     className="input"
+                                    rows={5}
                                     onChange={(e) =>
                                         handleAnswerChange(e.target.value)
                                     }

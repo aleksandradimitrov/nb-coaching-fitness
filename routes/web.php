@@ -74,6 +74,16 @@ Route::get('/about', function () {
 Route::get('/quiz', function () {
     return Inertia::render('QuizPage');
 });
+
+Route::get('/blog', function () {
+    return Inertia::render('Blog/BlogPage');
+});
+
+Route::get('/blog/blog-post/{id}', function ($id) {
+    return Inertia::render('Blog/BlogPostPage', [
+        'id' => $id
+    ]);
+});
 //---------------alex topki added------------------//
 
 

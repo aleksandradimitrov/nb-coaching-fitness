@@ -15,7 +15,7 @@ const ProgressBar = ({ progress }) => {
                         alt="logo"
                     />
                 </div>
-                <X className="text-white" />
+                <X onClick={() => window.location.href = '/'} className=" cursor-pointer text-white" />
             </div>
             <div
                 style={{
