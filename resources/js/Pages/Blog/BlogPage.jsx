@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "@/CustomComponents/Navbar";
 
 import { exampleBlogData, tagColors } from "@/Constants/StaticData";
+import Footer from "@/CustomComponents/Footer";
 
 const BlogPageCard = ({ title, date, readTime, tags, image }) => {
     return (
@@ -32,7 +33,7 @@ const BlogPage = () => {
     return (
         <div>
             <Navbar />
-            <div className="flex-col-10 py-28 max-w-wrapper">
+            <div className="flex-col-10 py-32 max-w-wrapper">
                 <h1 className="text-4xl font-bold text-center">Блог</h1>
                 <div className="grid-3 gap-10">
                     {exampleBlogData.map((card, idx) => (
@@ -40,6 +41,7 @@ const BlogPage = () => {
                     ))}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };
