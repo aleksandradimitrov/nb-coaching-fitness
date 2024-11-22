@@ -132,8 +132,8 @@ const Welcome = (props) => {
                 />
             </section>
 
-            <div className="py-32 px-5 lg:px-10 lg:bg-black overflow-hidden">
-                <section className="rounded-xl border border-red-600 grid-2 w-full">
+            <div className="py-32 px-5 lg:px-10  overflow-hidden">
+                <section className="rounded-xl border lg:bg-black border-red-600 grid-2 w-full">
                     <div className="px-5 lg:px-20 py-10  flex-col-5">
                         <h1 className="text-3xl lg:text-5xl font-bold">
                             Интересувате се от персонални тренировки?
