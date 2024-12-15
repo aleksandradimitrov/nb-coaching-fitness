@@ -19,7 +19,7 @@ const Quiz = () => {
 
     // Load responses from localStorage if present
     useEffect(() => {
-        const savedResponses = JSON.parse(localStorage.getItem("quizResponses"));
+        const savedResponses = JSON.parse(localStorage.getItem("userResponses"));
         if (savedResponses) {
             setUserResponses(savedResponses);
         }
@@ -27,7 +27,7 @@ const Quiz = () => {
 
     // Save responses to localStorage whenever updated
     useEffect(() => {
-        localStorage.setItem("quizResponses", JSON.stringify(userResponses));
+        localStorage.setItem("userResponses", JSON.stringify(userResponses));
     }, [userResponses]);
 
     const handleAnswerChange = (value, subKey) => {

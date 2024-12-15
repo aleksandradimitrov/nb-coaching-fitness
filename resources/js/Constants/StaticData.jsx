@@ -439,6 +439,25 @@ export const questions = [
         type: "single-choice",
         options: ["Под 2 литра", "2 - 3 литра", "3 - 4 литра", "Над 4 литра"],
     },
+    {
+        id: "q23",
+        question: "Oставете контакт за свързване",
+        type: "multi-input",
+        subquestions: [
+            {
+                id: "q23_1",
+                label: "Имейл",
+                placeholder: "Въведете вашият имейл",
+                type: "text",
+            },
+            {
+                id: "q23_2",
+                label: "Телефон",
+                placeholder: "Въведете вашият телефон",
+                type: "text",
+            },
+        ],
+    },
 ];
 
 
