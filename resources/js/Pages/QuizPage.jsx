@@ -13,23 +13,46 @@ const multipleChoiceSchema = z
 
 const Quiz = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [userResponses, setUserResponses] = useState({});
+    const [userResponses, setUserResponses] = useState([]);
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
     const [showSummary, setShowSummary] = useState(false);
 
+    // Load responses from localStorage if present
+    useEffect(() => {
+        const savedResponses = JSON.parse(localStorage.getItem("quizResponses"));
+        if (savedResponses) {
+            setUserResponses(savedResponses);
+        }
+    }, []);
+
+    // Save responses to localStorage whenever updated
+    useEffect(() => {
+        localStorage.setItem("quizResponses", JSON.stringify(userResponses));
+    }, [userResponses]);
+
     const handleAnswerChange = (value, subKey) => {
-        const currentQuestion = questions[currentQuestionIndex].question;
+        const currentQuestion = questions[currentQuestionIndex];
+        const questionId = currentQuestion.id;
+
+        const updatedResponse = {
+            questionId,
+            response: subKey
+                ? { ...userResponses.find((resp) => resp.questionId === questionId)?.response, [subKey]: value }
+                : value,
+        };
+
         setUserResponses((prevResponses) => {
-            if (subKey) {
-                return {
-                    ...prevResponses,
-                    [currentQuestion]: {
-                        ...prevResponses[currentQuestion],
-                        [subKey]: value,
-                    },
-                };
+            const existingIndex = prevResponses.findIndex(
+                (resp) => resp.questionId === questionId
+            );
+
+            if (existingIndex !== -1) {
+                const updatedResponses = [...prevResponses];
+                updatedResponses[existingIndex] = updatedResponse;
+                return updatedResponses;
             }
-            return { ...prevResponses, [currentQuestion]: value };
+
+            return [...prevResponses, updatedResponse];
         });
     };
 
@@ -58,9 +81,12 @@ const Quiz = () => {
     };
 
     useEffect(() => {
-        validateAnswer(
-            userResponses[questions[currentQuestionIndex].question] || "",
-        );
+        const currentResponse =
+            userResponses.find(
+                (resp) =>
+                    resp.questionId === questions[currentQuestionIndex].id
+            )?.response || "";
+        validateAnswer(currentResponse);
     }, [currentQuestionIndex, userResponses]);
 
     const handleNext = () => {
@@ -68,6 +94,7 @@ const Quiz = () => {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
             setShowSummary(true);
+            submitResponses();
         }
     };
 
@@ -77,14 +104,25 @@ const Quiz = () => {
         }
     };
 
+    const submitResponses = () => {
+        console.log("User responses:", userResponses);
+
+
+
+        // Implement API call or further processing here
+    };
+
     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
     const currentQuestion = questions[currentQuestionIndex];
-    const userAnswer = userResponses[currentQuestion.question] || "";
+    const userAnswer =
+        userResponses.find(
+            (resp) => resp.questionId === currentQuestion.id
+        )?.response || "";
 
     return (
         <div className="">
             <ProgressBar progress={progress} />
-            <div className="h-[70px] lg:hidden"/>
+            <div className="h-[70px] lg:hidden" />
             <div className="flex-center bg-header-image max-h-screen overflow-hidden px-5">
                 <div className="flex flex-col justify-between max-w-[400px] w-full gap-5 min-h-screen  py-56">
                     <div className="flex flex-col gap-5 lg:gap-3">
@@ -148,20 +186,20 @@ const Quiz = () => {
                                                         : [];
                                                 if (e.target.checked) {
                                                     selectedOptions.push(
-                                                        option,
+                                                        option
                                                     );
                                                 } else {
                                                     const index =
                                                         selectedOptions.indexOf(
-                                                            option,
+                                                            option
                                                         );
                                                     selectedOptions.splice(
                                                         index,
-                                                        1,
+                                                        1
                                                     );
                                                 }
                                                 handleAnswerChange(
-                                                    selectedOptions,
+                                                    selectedOptions
                                                 );
                                             }}
                                         />
@@ -226,7 +264,7 @@ const Quiz = () => {
                                             onChange={(e) => {
                                                 handleAnswerChange(
                                                     e.target.value,
-                                                    subq.label,
+                                                    subq.label
                                                 );
                                             }}
                                         />

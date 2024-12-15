@@ -250,15 +250,18 @@ export const aboutText = [
 
 export const questions = [
     {
+        id: "q1",
         question: "Име и фамилия",
         type: "multi-input",
         subquestions: [
             {
+                id: "q1_1",
                 label: "Име",
                 placeholder: "Въведете вашето име",
                 type: "text",
             },
             {
+                id: "q1_2",
                 label: "Фамилия",
                 placeholder: "Въведете вашата фамилия",
                 type: "text",
@@ -266,21 +269,25 @@ export const questions = [
         ],
     },
     {
+        id: "q2",
         question: "Възраст",
         type: "text",
         placeholder: "Въведете вашата възраст",
     },
     {
+        id: "q3",
         question: "Пол",
         type: "single-choice",
         options: ["Мъж", "Жена", "Друго"],
     },
     {
+        id: "q4",
         question: "От колко време тренирате?",
         type: "single-choice",
         options: ["6 месеца - 1 година", "1 - 3 години", "3 - 5 години", "Над 5 години"],
     },
     {
+        id: "q5",
         question: "Каква е вашата основна цел?",
         type: "single-choice",
         options: [
@@ -292,32 +299,37 @@ export const questions = [
         ],
     },
     {
+        id: "q6",
         question: "Каква е вашата текуща тренировъчна програма?",
         type: "textarea",
         placeholder: "Опишете тренировъчната програма тук",
     },
     {
+        id: "q7",
         question: "Колко пъти тренирате седмично?",
         type: "single-choice",
         options: ["1-2 пъти", "3 - 4 пъти", "5 - 6 пъти", "Повече от 6 пъти"],
     },
     {
-        question:
-            "Кои мускулни групи искате да подобрите най-много?",
+        id: "q8",
+        question: "Кои мускулни групи искате да подобрите най-много?",
         type: "textarea",
         placeholder: "Може да изброите специфична група или цялостно тонизиране на тялото",
     },
     {
+        id: "q9",
         question: "Изпълнявате ли кардио тренировки?",
         type: "single-choice",
         options: ["Да", "Не"],
     },
     {
+        id: "q10",
         question: "Колко пъти седмично изпълнявате кардио тренировки?",
         type: "single-choice",
         options: ["1 - 2 пъти", "3 - 4 пъти", "5 - 6 пъти", "Не изпълнявам кардио тренировки"],
     },
     {
+        id: "q11",
         question: "Каква е основната ви цел с кардио тренировките?",
         type: "multiple-choice",
         options: [
@@ -328,9 +340,10 @@ export const questions = [
             "Подготовка за състезание",
             "Друго (моля уточнете)",
         ],
-        textone: "Може да изберете повече от един отговор", 
+        textone: "Може да изберете повече от един отговор",
     },
     {
+        id: "q12",
         question: "Какъв тип кардио тренировки предпочитате?",
         type: "single-choice",
         options: [
@@ -341,11 +354,13 @@ export const questions = [
         ],
     },
     {
+        id: "q13",
         question: "Колко време отделяте за кардио тренировка?",
         type: "single-choice",
         options: ["Под 20 минути", "20 - 30 минути", "30 - 45 минути", "Над 45 минути"],
     },
     {
+        id: "q14",
         question: "Колко крачки изминавате средно на ден?",
         type: "single-choice",
         options: [
@@ -356,18 +371,20 @@ export const questions = [
             "Над 15 000 крачки",
             "Не ги следя",
         ],
-        texttwo: "6 000 - 10 000 крачки", // Example of a single-choice answer
     },
     {
+        id: "q15",
         question: "Каква е вашата височина и тегло?",
         type: "multi-input",
         subquestions: [
             {
+                id: "q15_1",
                 label: "Височина",
                 placeholder: "см.",
                 type: "text",
             },
             {
+                id: "q15_2",
                 label: "Тегло",
                 placeholder: "кг.",
                 type: "text",
@@ -375,6 +392,7 @@ export const questions = [
         ],
     },
     {
+        id: "q16",
         question: "Следвате ли определен тип хранителен режим в момента?",
         type: "single-choice",
         options: [
@@ -384,35 +402,39 @@ export const questions = [
             "Циклиране на въглехидрати",
             "Друго (моля, уточнете)",
         ],
-        texttwo: "Балансирана диета", 
     },
     {
+        id: "q17",
         question: "Колко калории приемате средно на ден?",
         type: "text",
         placeholder: "Напишете, напр. 3500 кал./ден или 'Не съм сигурен/Не следя'",
     },
     {
+        id: "q18",
         question: "Колко пъти се храните на ден?",
         type: "single-choice",
         options: ["1 - 2 пъти", "3 - 4 пъти", "5 - 6 пъти", "Над 6 пъти"],
     },
     {
+        id: "q19",
         question: "Какви добавки приемате в момента?",
         type: "single-choice",
         options: ["В момента не приемам добавки", "Опишете тук добавките, които приемате"],
     },
     {
-        question:
-            "Имате ли специфични здравословни проблеми или наранявания, които трябва да се вземат предвид?",
+        id: "q20",
+        question: "Имате ли специфични здравословни проблеми или наранявания, които трябва да се вземат предвид?",
         type: "single-choice",
         options: ["Няма здравословни проблеми", "Опишете тук специфичните здравословни проблеми или наранявания"],
     },
     {
+        id: "q21",
         question: "Колко часа спите средно на нощ?",
         type: "single-choice",
         options: ["Под 6 часа", "6 - 7 часа", "7 - 8 часа", "Над 8 часа"],
     },
     {
+        id: "q22",
         question: "Колко вода пиете на ден?",
         type: "single-choice",
         options: ["Под 2 литра", "2 - 3 литра", "3 - 4 литра", "Над 4 литра"],
